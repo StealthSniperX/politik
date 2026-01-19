@@ -39,7 +39,6 @@
     .slide.active {
         transform: translateX(-100%);
         opacity: 1;
-        left: 100%;
     }
 
     .slide.prev {
@@ -74,6 +73,31 @@
         font-size: 1em;
         opacity: 0.6;
     }
+
+    /* 📱 HANDY VERSION */
+    @media (max-width: 768px) {
+        .slide {
+            padding: 30px;
+            gap: 25px;
+        }
+
+        .frage {
+            font-size: 2em;
+        }
+
+        .text {
+            font-size: 1.1em;
+        }
+
+        .bild img {
+            max-width: 90%;
+            max-height: 35vh;
+        }
+
+        .hinweis {
+            font-size: 0.8em;
+        }
+    }
 </style>
 </head>
 <body>
@@ -88,8 +112,10 @@
         </div>
         <div class="text">
             E-Sport bezeichnet professionelles, wettbewerbsorientiertes
-            Videospielen. Spieler treten bei Turnieren gegeneinander an
-            und trainieren regelmäßig.
+            Videospielen. Spieler oder Teams treten bei organisierten
+            Turnieren gegeneinander an. Viele trainieren täglich mehrere
+            Stunden, analysieren Spiele und entwickeln Strategien – ähnlich
+            wie bei klassischen Sportarten.
         </div>
     </section>
 
@@ -100,9 +126,10 @@
             <img src="https://hawk.live/storage/post-images/negative-impact-of-esports-on-players-mental-health-13268.jpg">
         </div>
         <div class="text">
-            Zu den größten Gefahren zählen Bewegungsmangel,
-            lange Bildschirmzeiten, Schlafprobleme
-            und psychischer Stress.
+            Zu den größten Gefahren zählen Bewegungsmangel, zu lange
+            Bildschirmzeiten, Schlafprobleme sowie sozialer Rückzug.
+            Besonders junge Menschen können Schwierigkeiten haben,
+            ein gesundes Maß zwischen Freizeit, Schule und Gaming zu finden.
         </div>
     </section>
 
@@ -113,8 +140,10 @@
             <img src="https://cyberathletiks.com/wp-content/uploads/2021/01/negatives-of-gaming-and-esports.png">
         </div>
         <div class="text">
-            Ja. Häufig treten Rückenprobleme, Augenbelastung
-            sowie mentale Überforderung durch Leistungsdruck auf.
+            Ja, vor allem ohne Pausen und Ausgleich. Häufige Probleme sind
+            Rückenschmerzen, Nackenverspannungen und Augenbelastung.
+            Zusätzlich kann hoher Leistungsdruck zu Stress, Frustration
+            oder mentaler Erschöpfung führen.
         </div>
     </section>
 
@@ -125,13 +154,28 @@
             <img src="https://cdn.abcotvs.com/dip/images/4080624_082818-wls-video-games-vid.jpg">
         </div>
         <div class="text">
-            Ja, aber nur wenige schaffen es. Einnahmen entstehen
-            durch Preisgelder, Sponsoren, Team-Gehälter
-            oder Streaming.
+            Ja, aber nur wenige schaffen den Durchbruch. Einnahmen entstehen
+            durch Turnierpreisgelder, Sponsorenverträge, Team-Gehälter oder
+            Streaming-Plattformen wie Twitch. Für die meisten bleibt
+            E-Sport jedoch ein Hobby.
         </div>
     </section>
 
-    <!-- SLIDE 5 -->
+    <!-- SLIDE 5 (NEU) -->
+    <section class="slide">
+        <div class="frage">Welche Chancen bietet E-Sport?</div>
+        <div class="bild">
+            <img src="https://www.nutraceuticalsworld.com/wp-content/uploads/sites/12/2024/09/979_main-16.jpg">
+        </div>
+        <div class="text">
+            E-Sport fördert Teamarbeit, Reaktionsfähigkeit und strategisches
+            Denken. Außerdem entstehen neue Berufsfelder wie Coach,
+            Analyst, Eventmanager oder Content Creator. Für viele ist
+            E-Sport auch eine Möglichkeit, internationale Kontakte zu knüpfen.
+        </div>
+    </section>
+
+    <!-- SLIDE 6 -->
     <section class="slide">
         <div class="frage">Quellen</div>
         <div class="text">
@@ -152,12 +196,8 @@
     function updateSlides() {
         slides.forEach((slide, index) => {
             slide.classList.remove("active", "prev");
-            if (index === current) {
-                slide.classList.add("active");
-            }
-            if (index === current - 1) {
-                slide.classList.add("prev");
-            }
+            if (index === current) slide.classList.add("active");
+            if (index === current - 1) slide.classList.add("prev");
         });
     }
 
